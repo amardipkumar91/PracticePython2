@@ -1,0 +1,214 @@
+[
+    {
+        "deploymentName": "amq", 
+        "resources": {
+            "requests": {
+                "cpu": "65m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "authorization", 
+        "resources": {
+            "requests": {
+                "cpu": "300m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "configuration", 
+        "resources": {
+            "requests": {
+                "cpu": "75m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "institute", 
+        "resources": {
+            "requests": {
+                "cpu": "200m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "legalentity", 
+        "resources": {
+            "requests": {
+                "cpu": "30m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "user", 
+        "resources": {
+            "requests": {
+                "cpu": "200m"
+            }
+        }, 
+        "replicas": 1
+    }, 
+    {
+        "deploymentName": "datarouter", 
+        "env": [
+            {
+                "name": "AccountSwingScheduledEvent_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "BulkNovationScheduledEvent_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "CcpMapping_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ClearingBrokerRelationship_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ClearingBrokerRelationshipWithConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ClearingMemberRelationship_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ClearingRelationships_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "Entity_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "EntityAgents_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "EntityConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "EntityData_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "EntityJurisdictionConf_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "EntityRegReportingPref_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ExecutingAgent_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ExternalIdChanges_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "FirmAutoBlock_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "FTPConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "FuncGroup_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "FuncGroupNtd_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "InMQConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "Institute_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "JurRegRepConf_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "LegalEntitySummary_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "LegalEntityWithEntityConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "Lei_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "LePlusEntityConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "MasterAgreement_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "MCCEOverride_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "Novation4way_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "OutMQConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "RegReportingConfig_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "Relationships_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ReportingPreferences_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ReportingRelationship_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ReportingRelationshipByAsset_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ReportingRelationshipByJurisdictionAsset_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "ThirdPartyViewer_enabled", 
+                "value": "false"
+            }, 
+            {
+                "name": "UserData_enabled", 
+                "value": "false"
+            }
+        ], 
+        "replicas": 1
+    }
+]

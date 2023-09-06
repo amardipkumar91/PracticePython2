@@ -1,0 +1,173 @@
+[
+    {
+        "deploymentName": "batchtradeprocessor",
+        "resources": {
+            "requests": {
+                "cpu": "150m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "data-provider",
+        "resources": {
+            "requests": {
+                "cpu": "150m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "matching",
+        "resources": {
+            "requests": {
+                "cpu": "100m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "matching-credit",
+        "resources": {
+            "requests": {
+                "cpu": "300m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "matchingscore",
+        "resources": {
+            "requests": {
+                "cpu": "30m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "matchingscore-credit",
+        "resources": {
+            "requests": {
+                "cpu": "600m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "mcpcorecache",
+        "resources": {
+            "requests": {
+                "cpu": "500m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "mcpcorecachecredit",
+        "resources": {
+            "requests": {
+                "cpu": "1600m"
+            }
+        },
+        "env": [
+            {
+                "name": "MCP_CONSUMER_THREADS",
+                "value": "1"
+            }
+        ],
+        "replicas": 1
+    },
+    {
+        "deploymentName": "rejectionhandler",
+        "resources": {
+            "requests": {
+                "cpu": "30m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "requestvalidationcredit",
+        "resources": {
+            "requests": {
+                "cpu": "1500m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "requestvalidationfx",
+        "resources": {
+            "requests": {
+                "cpu": "1000m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "report-generator",
+        "resources": {
+            "requests": {
+                "cpu": "1000m"
+            },
+            "limits": {
+                "cpu": "1000m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflow",
+        "resources": {
+            "requests": {
+                "cpu": "600m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflowclearing",
+        "resources": {
+            "requests": {
+                "cpu": "300m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflow-credit",
+        "resources": {
+            "requests": {
+                "cpu": "1000m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflow-registration",
+        "resources": {
+            "requests": {
+                "cpu": "600m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflowtest",
+        "resources": {
+            "requests": {
+                "cpu": "600m"
+            }
+        },
+        "replicas": 1
+    },
+    {
+        "deploymentName": "workflow-regreporting",
+        "resources": {
+            "requests": {
+                "cpu": "300m"
+            }
+        },
+        "replicas": 1
+    }
+]

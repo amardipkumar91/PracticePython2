@@ -1,0 +1,7 @@
+{
+    "org_id": "<orgID>",
+    "api_key": "<APIkey>",
+    "tech_id": "<something>@techacct.adobe.com",
+    "secret": "<YourSecret>",
+    "pathToKey": "<path/to/your/privatekey.key>"
+}

@@ -1,0 +1,57 @@
+[
+    {
+        "deploymentName": "amq",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "65m"
+            }
+        }
+    },
+    {
+        "deploymentName": "authorization",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "300m"
+            }
+        }
+    },
+    {
+        "deploymentName": "configuration",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "75m"
+            }
+        }
+    },
+    {
+        "deploymentName": "institute",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "200m"
+            }
+        }
+    },
+    {
+        "deploymentName": "legalentity",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "30m"
+            }
+        }
+    },
+    {
+        "deploymentName": "user",
+        "replicas": 1,
+        "resources": {
+            "requests": {
+                "cpu": "200m"
+            }
+        }
+    }
+]
+

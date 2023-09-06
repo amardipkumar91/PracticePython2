@@ -1,0 +1,7 @@
+1. We need to read resource section of json which is under nft ver flder and update only resource section of json which is under git ver folder.
+
+2. Logic should be just to touch the "resources" section - overwrite all in git target from service config source, remove any in git target that aren't in source.
+
+3. exclude "replicas" from nft ver, just check resources section only.
+
+4. Don't hardcode like we have cpu ATM.
