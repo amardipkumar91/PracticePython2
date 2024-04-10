@@ -5,6 +5,7 @@ def find_non_repeating_substring(input_str):
     longest_sub_str = ''
     len_str = len(input_str)
     index = 0
+   
     while len_str != 1:
         l_str = ''
         for i in range(index, len(input_str)):
@@ -12,7 +13,6 @@ def find_non_repeating_substring(input_str):
                 l_str = l_str + input_str[i]
             else:
                 break
-        
         sub_str_length = len(l_str)
         if sub_str_length >  output_length:
             output_length = sub_str_length
@@ -21,9 +21,9 @@ def find_non_repeating_substring(input_str):
         index = index + 1
     return output_length,longest_sub_str
 if __name__ == '__main__':
-    input_str = input("Please enter the string: ")
+    input_str = "abcabcde"
     sub_str_length, sub_str = find_non_repeating_substring(input_str)
-    print ('Longest Substing lenght is "{0}" and the sub string is "{1}"'.format(sub_str_length, sub_str))
+    print ('    sting lenght is "{0}" and the sub string is "{1}"'.format(sub_str_length, sub_str))
 
 
 def solution(N):

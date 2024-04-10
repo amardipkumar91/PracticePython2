@@ -18,19 +18,19 @@
 #     print ("no of ways", noOfWays)
 #-------------------------other solution -------------------------------
 #grid question solution
-# def count_of_ways(m , n):
-#     if m == 0 and n == 0:
-#         return 0
-#     elif m == 0 or n == 0:
-#         return 1
-#     else:
-#         return count_of_ways(m -1, n) + count_of_ways(m , n- 1)
+def count_of_ways(m , n):
+    if m == 0 and n == 0:
+        return 0
+    elif m == 0 or n == 0:
+        return 1
+    else:
+        return count_of_ways(m -1, n) + count_of_ways(m , n- 1)
 
-# if __name__ == "__main__":
-#     print ("Enter the no if grid : ")
-#     n = int(input())
-#     noOfWays = count_of_ways(n, n)
-#     print ("no of ways", noOfWays)
+if __name__ == "__main__":
+    print ("Enter the no if grid : ")
+    n = int(input())
+    noOfWays = count_of_ways(n, n)
+    print ("no of ways", noOfWays)
 
 
 import bs4
