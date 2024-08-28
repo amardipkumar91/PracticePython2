@@ -17,19 +17,23 @@ print (climbStrains(n))
 # You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
 
 def minCoins(coins, amount):
-    dp = [float('inf')]* (amount+1)
+    dp = [999]* (amount+1)
     dp[0] = 0
+    
     for i in range(1, amount +1):
         for coin in coins:
             if i >= coin:
                 dp[i] = min(dp[i], dp[i-coin] +1)
-    if dp[amount] == 'inf':
+
+    if dp[amount] == 999:
         return -1
     else:
         return dp[amount]
+
 coins = [1, 2, 5]
-amount = 14
+amount = 11
 result = minCoins(coins, amount)
+print ("---", result)
 if result != -1:
     print("Minimum number of coins required to make {amount} is {result}")
 else:
@@ -47,7 +51,6 @@ def find_lis(nums):
     for i in range(1, n):
         for j in range(i):
             if nums[i] > nums[j]:
-                
                 list_length[i] = max(list_length[i], list_length[j]+1)
     return max(list_length)
 nums = [0,1,0,3,2,3]
@@ -83,7 +86,7 @@ def combination_sum(nums, target):
 
 nums = [1,2,3]
 target = 4
-print (combination_sum(nums, target))
+print ("--?comp", combination_sum(nums, target))
 
 
 def rob(nums):
@@ -130,7 +133,6 @@ def can_jump(nums):
 
     for i in range(n):
         # If the current index is beyond the maximum reachable index, return False
-        import pdb;pdb.set_trace()
         if i > max_reachable:
             return False
         # Update the maximum reachable index based on the current position and jump length
@@ -144,3 +146,99 @@ def can_jump(nums):
 # Example usage:
 nums = [2, 3, 1, 1, 4]
 print("Can jump to the last index?", can_jump(nums))
+
+
+
+# GET element of longest increasing subsequence
+
+def longest_increasing_subsequence(nums):
+    if not nums:
+        return 0, []
+
+    # Initialize a list to store the length of the longest increasing subsequence ending at each index
+    dp = [1] * len(nums)
+    # Initialize a list to store the index of the previous element contributing to the LIS ending at each index
+    prev_index = [-1] * len(nums)
+
+    # Iterate through each index in the array
+    for i in range(1, len(nums)):
+        # Check all previous indices for increasing subsequences
+        for j in range(i):
+            if nums[i] > nums[j] and dp[i] < dp[j] + 1:
+                # Update dp[i] with the maximum length of increasing subsequence ending at index i
+                dp[i] = dp[j] + 1
+                # Update prev_index[i] to j to keep track of the previous element contributing to the LIS ending at index i
+
+    # Find the index of the maximum value in dp, which represents the end index of the LIS
+    end_index = dp.index(max(dp))
+    # Initialize a list to store the elements of the LIS
+    lis = [nums[end_index]]
+
+    # Traverse backwards from end_index to retrieve the elements of the LIS
+    while prev_index[end_index] != -1:
+        end_index = prev_index[end_index]
+        lis.append(nums[end_index])
+
+    # Reverse the lis list to get the elements in increasing order
+    lis.reverse()
+
+    # Return the length of the LIS and the elements of the LIS
+    return max(dp), lis
+
+# Example usage:
+nums = [10, 9, 2, 5, 3, 7, 101, 18]
+length, lis_elements = longest_increasing_subsequence(nums)
+print("Length of LIS:", length)
+print("Elements of LIS:", lis_elements)
+
+
+
+
+
+
+#rob11 problem
+
+
+
+def rob_linear(nums):
+    if not nums:
+        return 0
+    n = len(nums)
+    if n == 1:
+        return nums[0]
+    dp = [0] * n
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+
+    for i in range(2, n):
+        dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])
+    return dp[-1]
+
+def rob(numbers):
+    if not numbers:
+        return 0
+    if len(numbers) ==1:
+        return numbers[0]
+    if len(numbers) ==2:
+        return max(numbers[0], numbers[1])
+    max1 = rob_linear(numbers[1:])
+    max2 = rob_linear(numbers[:-1])
+    return max(max1, max2)
+numbers = [2, 7, 9, 3, 1]
+print("Maximum amount of money robbed:", rob(numbers))
+
+
+def jump_game_next_solutions(nums):
+    n = len(nums)
+    final_position = n - 1
+    for i in range(n-2, -1, -1):
+        if i + nums[i] >= final_position:
+            final_position = i
+    return final_position ==0
+nums = [3,2,1,0,4]
+print("Can jump to the last index?", jump_game_next_solutions(nums))
+nums = [2,3,1,1,4]
+print("Can jump to the last index?", jump_game_next_solutions(nums))
+
+
+

@@ -1,3 +1,8 @@
+'''Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+https://leetcode.com/problems/3sum/description/
+
+'''
+
 def threeSum(nums, target):
     result = []
     nums.sort()
@@ -33,6 +38,9 @@ You are given an integer array height of length n. There are n vertical lines dr
 Find two lines that together with the x-axis form a container, such that the container contains the most water.
 Return the maximum amount of water a container can store.
 Notice that you may not slant the container.
+
+https://leetcode.com/problems/container-with-most-water/
+
 '''
 def most_water(height):
     left = 0
@@ -54,6 +62,23 @@ print (most_water(height))
 
 
 
+'''get next_greater_temperatures'''
+
+
+def next_greater_temperatures(temperatures):
+    n = len(temperatures)
+    result = [-1] * n
+    stack = []
+    for i in range(n):
+        while stack and temperatures[i] > temperatures[stack[-1]]:
+            prev_index = stack.pop()
+            result[prev_index] = temperatures[i]
+
+        stack.append(i)
+    return result
+        
+temperatures = [4, 5, 6, 3, 2, 9]
+print(next_greater_temperatures(temperatures))
 
 
 

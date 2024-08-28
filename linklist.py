@@ -185,6 +185,6 @@ print ("After delete the node link list is :", obj)
 # print ("After delete the node by postion link list is :", obj)
 
 
-import pdb;pdb.set_trace()
+
 
     

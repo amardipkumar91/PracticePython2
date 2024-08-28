@@ -64,7 +64,6 @@ def kadane_algo_with_list(A):
     start = end = temp_start = 0
     for i in range(1, len(A)):
         if A[i] > max_ending_here + A[i]:
-            
             max_ending_here = A[i]
             temp_start = i
         else:
@@ -118,7 +117,7 @@ def runCircularKadane(A):
 
 if __name__ == '__main__':
  
-    A = [2, 1, -5, 4, -3, 1, -3, 4, -1]
+    A = [3,4,5,1,2]
  
     print("The sum of the sublist with the largest sum is", runCircularKadane(A))
 
@@ -156,3 +155,56 @@ print(threeSum(nums))
 
 nums = [-1, 0, 1, 2, -1, -4]
 print(threeSum(nums))  
+
+
+
+def max_product_subarray(nums):
+    if not nums:
+        return 0
+
+    # Initialize variables
+    max_product = min_product = result = nums[0]
+
+    for i in range(1, len(nums)):
+        num = nums[i]
+        
+        # When multiplied by a negative number,
+        # max becomes min, and min becomes max.
+        if num < 0:
+            max_product, min_product = min_product, max_product
+            
+        # Update the max_product and min_product
+        max_product = max(num, max_product * num)
+        min_product = min(num, min_product * num)
+        # Update the result
+        result = max(result, max_product)
+
+    return result
+
+# Example usage
+nums = [2, 3, -2, 4]
+print(max_product_subarray(nums))  # Output: 6
+
+
+def search_roated_array(nums, target):
+    left, right = 0, len(nums) -1
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        
+        if nums[left] <= nums[mid]:
+            if nums[left] <= target < nums[mid]:
+                right = mid - 1
+            else:
+                left = mid +1
+        else:
+            if nums[mid] < target <= nums[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return -1
+    
+nums = [4,5,6,7,0,1,2]
+target = 0
+print (search_roated_array(nums, target))

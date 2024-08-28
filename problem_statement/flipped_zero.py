@@ -30,6 +30,7 @@ def flipped_zero(arr, n, m):
             wr += 1
         
         if zerocount > m:
+            
             if arr[wl] ==0 :
                 zerocount -= 1
             wl += 1
@@ -40,6 +41,7 @@ def flipped_zero(arr, n, m):
     
     for i in range(0, bestwindow):
         if arr[bestL + i] == 0:
+            import pdb;pdb.set_trace()
             print (bestL + i)
 
 

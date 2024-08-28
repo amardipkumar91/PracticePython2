@@ -40,21 +40,21 @@ print ("Number of ways = ",countWays(s))
 # foo()
 
 #---------- merge two sorted list -------
-# A = [4,5,7,9]
-# B  = [3,6,7,10]
-# len_A = len(A)
-# len_B = len(B)
-# i, j = 0,0
-# result = []
-# while i < len_A and j < len_B:
-#     if A[i] > B[j]:
-#         result.append(B[j])
-#         j += 1
-#     else:
-#         result.append(A[i])
-#         i += 1
+A = [4,5,7,9]
+B  = [3,6,7,10,11]
+len_A = len(A)
+len_B = len(B)
+i, j = 0,0
+result = []
+while i < len_A and j < len_B:
+    if A[i] > B[j]:
+        result.append(B[j])
+        j += 1
+    else:
+        result.append(A[i])
+        i += 1
 
-# print (result + A[i:] + B[j:])
+print (result + A[i:] + B[j:])
 
 
 #---------------- Merge Sort ----

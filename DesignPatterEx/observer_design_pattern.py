@@ -53,3 +53,4 @@ if __name__ == "__main__":
     subject.attach(observer1)
     subject.attach(observer2)
     subject.state = 1
+    subject.state = 2

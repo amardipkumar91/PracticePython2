@@ -82,3 +82,26 @@ nums = [0, 0, 1, 0, 1, 0, 0]
 findLargestSublist(nums)
 
 #Find maximum length subarray having a given sum
+
+def find_subarray_with_sum(nums, target):
+    start = 0
+    current_sum = 0
+    for end in range(len(nums)):
+        current_sum += nums[end]
+        while current_sum > target and start < end:
+            current_sum -= nums[start]
+            start += 1
+            
+        if current_sum == target:
+            return nums[start, end]
+
+
+
+
+nums = [1, 4, 20, 3, 10, 5]
+target = 33
+result = find_subarray_with_sum(nums, target)
+print("Indices of contiguous subarray with target sum:", result) 
+
+
+

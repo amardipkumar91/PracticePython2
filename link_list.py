@@ -98,4 +98,3 @@ class SinglyLinkedList:
 lst = SinglyLinkedList()
 lst.prepend(23)
 lst.prepend(34)
-import pdb;pdb.set_trace()

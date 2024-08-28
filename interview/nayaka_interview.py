@@ -34,7 +34,7 @@ print (" ".join(result))
 '''Given a string s, return the longest palindromic substring in s.
 '''
 
-sample_input = 'ac'
+sample_input = 'babad'
 result = 0
 final_substring = ''
 count = 0
