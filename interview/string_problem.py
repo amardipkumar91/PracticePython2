@@ -116,7 +116,6 @@ def is_valid_paranth(s):
             stack.append(i)
     return True if not stack else False
 s = "()[]{}"
-
 print (is_valid_paranth(s))
 
 
