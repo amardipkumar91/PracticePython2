@@ -200,3 +200,49 @@ def increasingTriplet(nums):
     return False
 nums = [1,2,3,4,5]
 print (increasingTriplet(nums))
+
+
+class ComplexNumber:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+    
+
+    def __add__(self, other):
+        new_real = self.real + other.real
+        new_imag = self.imag + other.imag
+        return ComplexNumber(new_real, new_imag)
+    
+    def __str__(self):
+        sign = "+" if self.imag >= 0 else "-"
+        return f"{self.real} {sign} {abs(self.imag)}i"
+    
+a = ComplexNumber(real = 3, imag=7)
+b = ComplexNumber(real=4, imag= 8)
+print (a+b)
+
+
+#Can Place Flowers
+
+def can_place_flowers(flowerbed, n):
+    length = len(flowerbed)
+    count = 0  # Counter for how many flowers we can plant
+
+    for i in range(length):
+        # Check if the current plot is empty and the adjacent plots are either empty or out of bounds
+        if flowerbed[i] == 0:
+            empty_left = (i == 0 or flowerbed[i - 1] == 0)
+            empty_right = (i == length - 1 or flowerbed[i + 1] == 0)
+            if empty_left and empty_right:
+                # Plant a flower here
+                flowerbed[i] = 1
+                count += 1
+                
+                if count >= n:
+                    return True
+    
+    return count >= n
+
+flowerbed = [1, 0, 0, 0, 1]
+n = 2
+print(can_place_flowers(flowerbed, n))

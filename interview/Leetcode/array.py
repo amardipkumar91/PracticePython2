@@ -52,6 +52,14 @@ def product_except_self(nums):
 nums = [3,2,3]
 print (product_except_self(nums))
 
+def product_except_self_nxt(nums):
+    from functools import reduce
+    nums = [-1,1,0,-3,3]
+    tp = reduce(lambda x, y : x*y, nums)
+    return [tp//num for num in nums]
+
+
+
 #extra candies
 
 def get_candies(candies, extraCandies):
@@ -61,4 +69,6 @@ def get_candies(candies, extraCandies):
 candies = [2,3,5,1,3]
 extraCandies = 3
 print (get_candies(candies, extraCandies))
+
+
 
