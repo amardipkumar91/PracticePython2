@@ -180,8 +180,6 @@ strr = "leetcode"
 print (get_reverse_vowels(strr))
 
 
-
-
 strr = "leetcode"
 print (get_reverse_vowels(strr))
 
